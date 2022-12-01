@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\npro\\RiderProjects\\FinalDraft_11.6\\FinalDraft_11.6.csproj": {}
+    "D:\\Users\\boora\\project\\FinalDraft_11.6\\FinalDraft_11.6.csproj": {}
   },
   "projects": {
-    "C:\\Users\\npro\\RiderProjects\\FinalDraft_11.6\\FinalDraft_11.6.csproj": {
+    "D:\\Users\\boora\\project\\FinalDraft_11.6\\FinalDraft_11.6.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\npro\\RiderProjects\\FinalDraft_11.6\\FinalDraft_11.6.csproj",
+        "projectUniqueName": "D:\\Users\\boora\\project\\FinalDraft_11.6\\FinalDraft_11.6.csproj",
         "projectName": "FinalDraft_11.6",
-        "projectPath": "C:\\Users\\npro\\RiderProjects\\FinalDraft_11.6\\FinalDraft_11.6.csproj",
-        "packagesPath": "C:\\Users\\npro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\npro\\RiderProjects\\FinalDraft_11.6\\obj\\",
+        "projectPath": "D:\\Users\\boora\\project\\FinalDraft_11.6\\FinalDraft_11.6.csproj",
+        "packagesPath": "C:\\Users\\boora\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\boora\\project\\FinalDraft_11.6\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\npro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\boora\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
