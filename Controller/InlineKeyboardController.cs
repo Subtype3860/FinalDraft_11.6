@@ -13,7 +13,8 @@ public class InlineKeyboardController
     }
     public async Task Handle(CallbackQuery callbackQuery, CancellationToken ct)
     {
-        if (callbackQuery?.Data == null)
-            Console.ReadKey();
+
+            var x = callbackQuery.Message;
+       
     }
 }

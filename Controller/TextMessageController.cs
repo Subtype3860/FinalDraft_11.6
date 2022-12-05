@@ -16,28 +16,26 @@ public class TextMessageController
 
     public async Task Handle(Message message, CancellationToken cancellationToken)
     {
-        await _telegramBotClient.SendTextMessageAsync(message.Chat.Id, $"Bot  вработе", cancellationToken: cancellationToken);
-        switch (message.Text)
+        if (message.Text!.ToLower().Equals("/start"))
         {
-            case "/start":
-                var ss = message.Text;
-                var buttons = new List<InlineKeyboardButton[]>();
-                buttons.Add(new []
-                {
-                    InlineKeyboardButton.WithCallbackData("Подсчёт символов", "t"),
-                    InlineKeyboardButton.WithCallbackData("Сложение", "f")
-                });
-                await _telegramBotClient.SendTextMessageAsync(message.Chat.Id,
-                    $"<b>  Наш бот подсчитывает символы в тексте.</b> {Environment.NewLine}" +
-                    $"{Environment.NewLine}<b>Производит сложения чисел.</b>{Environment.NewLine}",
-                    cancellationToken: cancellationToken, parseMode: ParseMode.Html,
-                    replyMarkup: new InlineKeyboardMarkup(buttons));
-                return;
-            default:
-                await _telegramBotClient.SendTextMessageAsync(message.Chat.Id,
-                    "Отправьте аудио для превращения в текст.", cancellationToken: cancellationToken);
-                return;
+
+            await _telegramBotClient.SendTextMessageAsync(message.Chat.Id,
+                $"<b>  Наш бот подсчитывает символы в тексте.</b> {Environment.NewLine}" +
+                $"{Environment.NewLine}<b>Производит сложения чисел.</b>{Environment.NewLine}",
+                cancellationToken: cancellationToken, parseMode: ParseMode.Html);
         }
-        
+        else
+        {
+            var buttons = new List<InlineKeyboardButton[]>();
+            buttons.Add(new[]
+            {
+                InlineKeyboardButton.WithCallbackData("Подсчёт символов", "t"),
+                InlineKeyboardButton.WithCallbackData("Сложение", "f")
+            });
+            await _telegramBotClient.SendTextMessageAsync(message.Chat.Id, 
+                $"<i>Вы ввели текст.</i>{Environment.NewLine}<b>{message.Text}</b>{Environment.NewLine}Выберите действия",
+                cancellationToken: cancellationToken, parseMode: ParseMode.Html,
+                replyMarkup: new InlineKeyboardMarkup(buttons));
+        }
     }
 }

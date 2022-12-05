@@ -44,12 +44,9 @@ internal class Bot : BackgroundService
         // Обрабатываем входящие сообщения из Telegram Bot API: https://core.telegram.org/bots/api#message
         if (update.Type == UpdateType.Message)
         {
-            await _telegramClient.SendTextMessageAsync(update.Message!.Chat.Id, "Вы отправили сообщение",
-                            cancellationToken: cancellationToken);
             if (update.Message!.Type == MessageType.Text)
             {
                 await _textMessageController.Handle(update.Message, cancellationToken);
-                return;
             }
             else
             {
