@@ -1,4 +1,5 @@
 ﻿using FinalDraft_11._6.Controller;
+using FinalDraft_11._6.Models;
 using Microsoft.Extensions.Hosting;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;

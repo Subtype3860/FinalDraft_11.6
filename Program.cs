@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using FinalDraft_11._6.Configuration;
 using FinalDraft_11._6.Controller;
+using FinalDraft_11._6.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Telegram.Bot;
@@ -31,6 +32,7 @@ namespace FinalDraft_11._6
             services.AddSingleton(BuildAppSettings());
             services.AddTransient<TextMessageController>();
             services.AddTransient<InlineKeyboardController>();
+            services.AddTransient<Session>();
             services.AddSingleton<ITelegramBotClient>(provider => new TelegramBotClient(appSetting.BotToken!));
             // Регистрируем постоянно активный сервис бота
             services.AddHostedService<Bot>();

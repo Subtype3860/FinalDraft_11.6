@@ -1,4 +1,5 @@
-﻿using Telegram.Bot;
+﻿using FinalDraft_11._6.Models;
+using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -32,9 +33,16 @@ public class TextMessageController
                 InlineKeyboardButton.WithCallbackData("Подсчёт символов", "t"),
                 InlineKeyboardButton.WithCallbackData("Сложение", "f")
             });
+
+            Session session = new Session
+            {
+                TextString = message.Text
+            };
             await _telegramBotClient.SendTextMessageAsync(message.Chat.Id, 
-                $"<i>Вы ввели текст.</i>{Environment.NewLine}<b>{message.Text}</b>{Environment.NewLine}Выберите действия",
-                cancellationToken: cancellationToken, parseMode: ParseMode.Html,
+                $"<i>Вы ввели текст.</i>{Environment.NewLine}Выберите действия для техта:",
+                cancellationToken: cancellationToken, parseMode: ParseMode.Html);
+            await _telegramBotClient.SendTextMessageAsync(message.Chat.Id,
+                message.Text,
                 replyMarkup: new InlineKeyboardMarkup(buttons));
         }
     }
